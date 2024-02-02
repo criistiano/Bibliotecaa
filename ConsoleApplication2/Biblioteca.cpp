@@ -11,13 +11,21 @@ using namespace std;
 
 struct _libro libro[MAXLIBRI];
 
+int libri_presenti = 2;
 
 int main()
 {
-
+	struct _libro* pl;
+	int i;
 	setlocale(LC_ALL, "italian");
-	insertbook(&libro[0]);
-	printbook(&libro[0]);
+	for (i = 0,pl=libro; i < libri_presenti;i++,pl++)
+	{
+		insertbook(pl);
+	}
+	for (i = 0,pl=libro; i < libri_presenti; i++, pl++)
+	{
+		printbook(pl);
+	}
 	return(0);
 }
 
